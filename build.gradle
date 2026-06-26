@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.objectdetection'
+version = '1.0.0'
+sourceCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+dependencies {
+    implementation 'org.bytedeco:javacv-platform:1.5.8'
+    implementation 'ai.onnxruntime:onnxruntime:1.16.0'
+    implementation 'org.apache.commons:commons-math3:3.6.1'
+    implementation 'org.slf4j:slf4j-simple:2.0.9'
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'ObjectDetectionTracking'
+        )
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+}

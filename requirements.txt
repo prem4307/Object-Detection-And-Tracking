@@ -1,0 +1,26 @@
+# Java dependency references for object detection and tracking.
+# Java uses Maven/Gradle/Ivy rather than requirements.txt.
+# Add these to your build file (pom.xml or build.gradle) instead.
+
+# OpenCV Java bindings
+org.openpnp:opencv:4.5.5-0
+
+# ONNX runtime for Java
+ai.onnxruntime:onnxruntime:1.16.0
+
+# JavaCV platform bundle includes OpenCV and additional native support
+org.bytedeco:javacv-platform:1.5.8
+
+# Matrix and numeric utilities for tracking and motion filtering
+org.apache.commons:commons-math3:3.6.1
+
+# Logging and utilities
+org.slf4j:slf4j-api:2.0.9
+ch.qos.logback:logback-classic:1.4.11
+
+# Optional: native OpenCV extras if you build with contrib modules
+org.bytedeco:opencv-platform:4.8.0-1.5.8
+
+# Notes:
+# 1. Keep this file as a reference only. Use Maven or Gradle to manage Java dependencies.
+# 2. For pure OpenCV Java usage, install OpenCV and set java.library.path to the native binaries.
